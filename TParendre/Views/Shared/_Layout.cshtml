@@ -1,0 +1,812 @@
+﻿@*<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Nom de l'application", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
+                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>*@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Afficher ou cacher un bloc de texte</title>
+    <!----
+        <style type="text/css">
+
+            #cache{
+                display: none;
+                border: 1px solid silver;
+                background-color: yellow;
+            }
+            .montrer:active:
+        </style>
+        <script>
+            function affiche() {
+                if (document.getElementById('bouton').innerHTML == 'Montrer') {
+                    document.getElementById('bouton').innerHTML == 'cacher';
+                    document.getElementById('cache').style.display == 'block';
+                }
+                else {
+                    document.getElementById('bouton').innerHTML == 'Montrer';
+                    document.getElementById('cache').style.display == 'none';
+                }
+            };
+        </script>
+        -->
+</head>
+
+<body>
+
+
+    <p>Oumaria 1: la Défunte a laissé Epoux Père et Mère</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="200px" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Epoux</span></b>------------------------------------------
+                                    <b><span>Moitié</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Père</span></b>-------------------------------------------
+                                    <b><span>Deux-Tiers du Reste</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Mère</span></b>-------------------------------------------
+                                    <b><span>Tiers du Reste</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 2 et c'est valable sur 6 et est appelé Oumaria</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>3/6</span>--------------------------------------
+                                        <span>50.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Père</span>------------------------------------------
+                                        <span>2/6</span>--------------------------------------
+                                        <span>33.3%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>1/6</span>--------------------------------------
+                                        <span>16.7%</span>
+                                    </p>
+
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <p>Oumaria 2: Le defunt a laissé Epouse Père et Mère</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="150px" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Epoux</span></b>------------------------------------------
+                                    <b><span>Quart</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Père</span></b>-------------------------------------------
+                                    <b><span>Deux-Tiers du Reste</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Mère</span></b>-------------------------------------------
+                                    <b><span>Tiers du Reste</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 4 et c'est valable sur 4 et est appelé Oumaria</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>1/4</span>--------------------------------------
+                                        <span>25.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Père</span>------------------------------------------
+                                        <span>2/4</span>--------------------------------------
+                                        <span>50.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>1/4</span>--------------------------------------
+                                        <span>25.0%</span>
+                                    </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>Mouchtarika: La Défunte a laissé Epoux Mère Frère Germain(2) et Frère/Soeur Utérin(e)(2)</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="150px" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Epoux</span></b>------------------------------------------
+                                    <b><span>Moitié</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Mère</span></b>-------------------------------------------
+                                    <b><span>Sixième</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Frère Germain (2)</span></b>-------------------------------------------
+                                    <b><span>Se partagent à part égale</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Frère / Soeur Utérin(e) (2)</span></b>-------------------------------------------
+                                    <b><span>Se partagent à part égale</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 6 et c'est valable sur 12 et est appelé Mouchtarika</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>6/12</span>--------------------------------------
+                                        <span>50.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>2/12</span>--------------------------------------
+                                        <span>16.7%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Frère Germain (2)</span>------------------------
+                                        <span>1/12</span>--------------------------------------
+                                        <span>16.7%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Frère / Soeur Utérin(e) (2)</span>-----------------
+                                        <span>1/12</span>--------------------------------------
+                                        <span>16.7%</span>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part Individuelle</span></b>-----------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>6/12</span>--------------------------------------
+                                        <span>50.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>2/12</span>--------------------------------------
+                                        <span>16.7%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Frère Germain (2)</span>------------------------
+                                        <span>1/12</span>--------------------------------------
+                                        <span>8.3%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Frère / Soeur Utérin(e) (2)</span>-----------------
+                                        <span>1/12</span>--------------------------------------
+                                        <span>8.3%</span>
+                                    </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>Akdaria: La Défunte a laissé Epoux Mère Grand-Père et Soeur Germaine</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="150x" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Epoux</span></b>------------------------------------------
+                                    <b><span>Moitié</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Mère</span></b>-------------------------------------------
+                                    <b><span>Tiers</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Grand-père</span></b>-------------------------------------------
+                                    <b><span>Se partagent le sixième et la moitié</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Soeur Germaine</span></b>-------------------------------------------
+                                    <b><span>Se partagent le sixième et la moitié</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 6 et passe à 9 et c'est valable sur 27 et est appelé Mouchtarika</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>9/27</span>--------------------------------------
+                                        <span>33.3%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>6/27</span>--------------------------------------
+                                        <span>22.2%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Grand-père</span>---------------------------------
+                                        <span>8/27</span>--------------------------------------
+                                        <span>29.6%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>soeur Germaine</span>----------------------------
+                                        <span>4/27</span>--------------------------------------
+                                        <span>14.8%</span>
+                                    </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>Malikiyya: La Défunte a laissé Epoux Mère Grand-Père et Frère Consanguin et Frère/Soeur Utérin(e) (2)</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="150px" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Epoux</span></b>------------------------------------------
+                                    <b><span>Moitié</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Mère</span></b>-------------------------------------------
+                                    <b><span>sixième</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Grand-père</span></b>-------------------------------------------
+                                    <b><span>Tiers</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Frère Consanguin</span></b>-------------------------------------------
+                                    <b><span>Rien</span></b>
+                                </p>
+                                <p>
+                                    <b><span>Frère / Soeur Utérin(e) (2)</span></b>-------------------------------------------
+                                    <b><span>Privation</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 6  et c'est valable sur 6 et est appelé Malikiyya</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>3/6</span>--------------------------------------
+                                        <span>50.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>1/6</span>--------------------------------------
+                                        <span>16.7%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Grand-père</span>---------------------------------
+                                        <span>2/6</span>--------------------------------------
+                                        <span>33.3%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>soeur Germaine</span>----------------------------
+                                        <span>-</span>--------------------------------------
+                                        <span>0.0%</span>
+                                    </p>
+                                    <p>
+                                        <b><span>Frère / Soeur Utérin(e) (2)</span></b>--------------------------------
+                                        <b><span>-</span></b>---------------------------
+                                        <span>0.0%</span>
+                                    </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>Chibh Malikiyya:La Défunte a laissé Epoux Mère Grand-Père et Frère Germain et Frère/Soeur Utérin(e) (2)</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="150px" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Epoux</span></b>------------------------------------------
+                                    <b><span>Moitié</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Mère</span></b>-------------------------------------------
+                                    <b><span>sixième</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Grand-père</span></b>-------------------------------------------
+                                    <b><span>Tiers</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Frère Germain</span></b>-------------------------------------------
+                                    <b><span>Rien</span></b>
+                                </p>
+                                <p>
+                                    <b><span>Frère / Soeur Utérin(e) (2)</span></b>------------------------------------
+                                    <b><span>Privation</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 6  et c'est valable sur 6 et est appelé Chibh Malikiyya</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>3/6</span>--------------------------------------
+                                        <span>50.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>1/6</span>--------------------------------------
+                                        <span>16.7%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Grand-père</span>---------------------------------
+                                        <span>2/6</span>--------------------------------------
+                                        <span>33.3%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>soeur Germaine</span>----------------------------
+                                        <span>-</span>--------------------------------------
+                                        <span>0.0%</span>
+                                    </p>
+                                    <p>
+                                        <b><span>Frère / Soeur Utérin(e) (2)</span></b>--------------------------------
+                                        <b><span>-</span></b>---------------------------
+                                        <span>0.0%</span>
+                                    </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>Minbariyya : Le Défunt a laissé Fille(2) Epouse Père et Mère</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="150px" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Fille(2)</span></b>------------------------------------------
+                                    <b><span>Deux-Tiers</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Epouse</span></b>-------------------------------------------
+                                    <b><span>Huitième</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Père</span></b>-------------------------------------------
+                                    <b><span>Sixième</span></b>
+                                </p>
+                                <p>
+                                    <b><span>Mère</span></b>-------------------------------------------
+                                    <b><span>Sixième</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 24 et passe 27 et c'est valable sur 27  est appelé Minbariyya</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Fille (2)</span>-----------------------------------------
+                                        <span>16/27</span>--------------------------------------
+                                        <span>59.3%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Eouse</span>------------------------------------------
+                                        <span>3/27</span>--------------------------------------
+                                        <span>11.1%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Père</span>------------------------------------------
+                                        <span>4/27</span>--------------------------------------
+                                        <span>14.8%</span>
+                                    </p>
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>4/27</span>--------------------------------------
+                                        <span>14.8%</span>
+                                    </p>
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part Individuelle</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Fille (2)</span>-----------------------------------------
+                                        <span>8/27</span>--------------------------------------
+                                        <span>29.6%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Eouse</span>------------------------------------------
+                                        <span>3/27</span>--------------------------------------
+                                        <span>11.1%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Père</span>------------------------------------------
+                                        <span>4/27</span>--------------------------------------
+                                        <span>14.8%</span>
+                                    </p>
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>4/27</span>--------------------------------------
+                                        <span>14.8%</span>
+                                    </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>Kharqa: le Défunt a laissé Mère Grand-Père et Soeur Germaine</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="200px" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Mère</span></b>------------------------------------------
+                                    <b><span>Tiers</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Grand-Père</span></b>-------------------------------------------
+                                    <b><span>Partage avec les frères comme un parmi eux</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Soeur Germaine</span></b>-------------------------------------------
+                                    <b><span>Homme prend comme deux femmes</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 3 et c'est valable sur 9 et est appelé Kharqa</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Mère</span>-----------------------------------------
+                                        <span>3/9</span>--------------------------------------
+                                        <span>33.3%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Grand-Père</span>------------------------------------------
+                                        <span>4/9</span>--------------------------------------
+                                        <span>44.4%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Soeur Germaine</span>------------------------------------------
+                                        <span>2/9</span>--------------------------------------
+                                        <span>22.2%</span>
+                                    </p>
+
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p>Oum al-Farroukh : La Défunte a laissé Epoux Mère Soeur Germaine(2) et Frère/Soeur Utérin(e) (2)</p><div style="margin: 20px; margin-top: 5px;">
+        <div class="quotetitle"><input style="width: 130px; font-size: 12px; margin: 0px; padding: 1px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = ''; this.innerText = ''; this.value = 'Masquer'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Détails'; }" type="button" value="Détails" /></div><div class="quotecontent">
+            <div style="display: none;">
+                <table border="4" width="80%" height="150px" cellpadding="10px">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <b><span>Heritier</span></b>--------------------------------------
+                                    <b><span>Part</span></b>
+                                </p>
+                                <hr />
+                                <p>
+                                    <b><span>Epoux</span></b>------------------------------------------
+                                    <b><span>Moitié</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Mère</span></b>-------------------------------------------
+                                    <b><span>Sixième</span></b>
+                                </p>
+
+                                <p>
+                                    <b><span>Soeur Germaine(2)</span></b>-------------------------------------------
+                                    <b><span>Deux-Tiers</span></b>
+                                </p>
+                                <p>
+                                    <b><span>Frère/Soeur Utérin(e) (2)</span></b>-------------------------------------------
+                                    <b><span>Tiers</span></b>
+                                </p>
+                                <hr />
+                                <b>
+                                    <p align="center">Cas d'origine sur 6 et  c'est valable sur 10  est appelé Oum al-Farroukh</p><b />
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>3/10</span>--------------------------------------
+                                        <span>30.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>1/10</span>--------------------------------------
+                                        <span>10.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Soeur Germaine(2)</span>------------------------------------------
+                                        <span>4/10</span>--------------------------------------
+                                        <span>40.0%</span>
+                                    </p>
+                                    <p>
+                                        <span>Frère/Soeur Utérin(e) (2)</span>------------------------------------------
+                                        <span>2/10</span>--------------------------------------
+                                        <span>20.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <b><span>Heritier</span></b>--------------------------------------
+                                        <b><span>Part Individuelle</span></b>--------------------------------------
+                                        <b><span>%</span></b>
+                                    </p>
+                                    <hr />
+                                    <p>
+                                        <span>Epoux</span>-----------------------------------------
+                                        <span>3/10</span>--------------------------------------
+                                        <span>30.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Mère</span>------------------------------------------
+                                        <span>1/10</span>--------------------------------------
+                                        <span>10.0%</span>
+                                    </p>
+
+                                    <p>
+                                        <span>Soeur Germaine(2)</span>------------------------------------------
+                                        <span>2/10</span>--------------------------------------
+                                        <span>20.0%</span>
+                                    </p>
+                                    <p>
+                                        <span>Frère/Soeur Utérin(e) (2)</span>------------------------------------------
+                                        <span>1/10</span>--------------------------------------
+                                        <span>10.0%</span>
+                                    </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
